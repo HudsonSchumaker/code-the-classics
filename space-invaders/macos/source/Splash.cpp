@@ -8,18 +8,19 @@
 #include "Splash.hpp"
 #include "Common.hpp"
 
-Splash::Splash(SDL_Renderer *renderer) {
+Splash::Splash(SDL_Renderer* renderer) {
     this->renderer = renderer;
     load();
     loop();
 }
 
 Splash::~Splash() {
+    unload();
 }
 
 void Splash::load() {
-    logo_surface = IMG_Load("data/logo.png");
-    logo_texture = SDL_CreateTextureFromSurface(renderer, logo_surface);
+    logoSurface = IMG_Load("data/logo.png");
+    logoTexture = SDL_CreateTextureFromSurface(renderer, logoSurface);
 }
 
 void Splash::loop() {
@@ -35,9 +36,9 @@ void Splash::render() {
     SDL_RenderClear(renderer);
 
     SDL_Point size;
-    SDL_QueryTexture(logo_texture, NULL, NULL, &size.x, &size.y);
+    SDL_QueryTexture(logoTexture, NULL, NULL, &size.x, &size.y);
     SDL_Rect rect = { Common::H_WIDTH - (size.x/2), Common::H_HEIGHT - (size.y/2), size.x, size.y };
-    SDL_RenderCopy(renderer, logo_texture, NULL, &rect);
+    SDL_RenderCopy(renderer, logoTexture, NULL, &rect);
 
     SDL_RenderPresent(renderer);   
 }
@@ -53,6 +54,6 @@ void Splash::input() {
 }
 
 void Splash::unload() {
-    SDL_DestroyTexture(logo_texture);
-    SDL_FreeSurface(logo_surface);
+    SDL_DestroyTexture(logoTexture);
+    SDL_FreeSurface(logoSurface);
 }
