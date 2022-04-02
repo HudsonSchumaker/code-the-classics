@@ -1,7 +1,7 @@
 // 
 // macOS
-// Splash.hpp
-// SchumakerTeam.
+// Space Invaders
+// SchumakerTeam
 // Hudson Schumaker
 //
 
@@ -13,15 +13,16 @@
 class Splash final {
     private:
         SDL_Renderer *renderer;
-        SDL_Surface *logo_surf;
-        SDL_Texture *logo; 
-
-        void load();
-        void input();
+        SDL_Surface *logo_surface;
+        SDL_Texture *logo_texture; 
+        
+        void load();  
         void loop();
-        void exit();  
+        void render();
+        void input();
+        void unload();  
     
     public:
-        Splash(SDL_Renderer* renderer);
+        Splash(SDL_Renderer *renderer);
         ~Splash();
 };
