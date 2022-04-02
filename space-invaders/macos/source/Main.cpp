@@ -10,12 +10,15 @@
 #include <SDL2/SDL_image.h>
 #include "Common.hpp"
 #include "Splash.hpp"
+#include "Menu.hpp"
 
 SDL_Window *window;
 SDL_Renderer *renderer;
 
 void setUp() {
     SDL_Init(SDL_INIT_EVERYTHING);
+    TTF_Init();
+
     window = SDL_CreateWindow(
         Common::TITLE, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
         Common::WIDTH,
@@ -28,7 +31,9 @@ void setUp() {
 
 int main(void) {
     setUp(); 
+
     Splash splash(renderer);
+    Menu menu(renderer);
+
     return 0;
 }
-
