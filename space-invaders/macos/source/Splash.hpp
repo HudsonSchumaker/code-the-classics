@@ -12,9 +12,9 @@
 
 class Splash final {
     private:
-        SDL_Renderer *renderer;
-        SDL_Surface *logo_surface;
-        SDL_Texture *logo_texture; 
+        SDL_Renderer* renderer;
+        SDL_Surface* logoSurface;
+        SDL_Texture* logoTexture; 
         
         void load();  
         void loop();
