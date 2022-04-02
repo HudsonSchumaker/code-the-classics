@@ -13,8 +13,20 @@
 class Menu final {
     private:
         SDL_Renderer* renderer;
-        SDL_Color white = { 255, 255, 255 };
-        TTF_Font* font48;
+        SDL_Surface* surfaceTitle;
+        SDL_Texture* title;
+        SDL_Surface* surfaceStartWhite;
+        SDL_Texture* startWhiteTexture;
+        SDL_Surface* surfaceStartGray;
+        SDL_Texture* startGrayTexture;
+
+        TTF_Font* font60;
+        TTF_Font* font40;
+        
+        bool isRunning;
+        Uint64 currentTick;
+        Uint64 lastTick;
+        double deltaTime;
         
         void load();  
         void loop();
