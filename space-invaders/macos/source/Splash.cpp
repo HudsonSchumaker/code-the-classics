@@ -7,6 +7,7 @@
 
 #include "Splash.hpp"
 #include "Common.hpp"
+#include <stdlib.h>
 
 Splash::Splash(SDL_Renderer* renderer) {
     this->renderer = renderer;
@@ -48,6 +49,7 @@ void Splash::input() {
     while (SDL_PollEvent(&sdlEvent)) {
         switch (sdlEvent.type) {
             case SDL_QUIT:
+                exit(0);
                 break;
         }
     }
