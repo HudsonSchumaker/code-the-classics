@@ -8,7 +8,6 @@ run:
 bundle:
 	g++ -Wall -std=c++17 source/*.cpp -o gameengine -I/opt/homebrew/include -L/opt/homebrew/lib -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer
 	mv -f gameengine build/
-	
 	rm -r game.app
 
 	mkdir -p game.app/Contents
@@ -16,7 +15,7 @@ bundle:
 	mkdir game.app/Contents/Resources
 
 	touch game.app/Contents/Info.plist
-	cp build/gameengine game.app/Contents/MacOS/
+	cp -r build/gameengine game.app/Contents/MacOS/
 	cp data/iconbuilder.icns game.app/Contents/Resources/
 	cp -r data game.app/Contents/Resources/
 
