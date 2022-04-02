@@ -9,7 +9,7 @@ bundle:
 	g++ -Wall -std=c++17 source/*.cpp -o gameengine -I/opt/homebrew/include -L/opt/homebrew/lib -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer
 	mv -f gameengine build/
 	
-	rm -r game.app
+	rm -r build/game.app
 
 	mkdir -p game.app/Contents
 	mkdir game.app/Contents/MacOS
@@ -22,7 +22,8 @@ bundle:
 
 	echo "<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"><plist version="1.0"><dict><key>CFBundleIconFile</key><string>iconbuilder.icns</string><key>CFBundleExecutable</key><string>gameengine</string></dict> </plist>" >> game.app/Contents/Info.plist
 
-	open -a game.app
+	mv -f game.app build
+	#open -a build/game.app
 
 clean:
 	rm build/gameengine
