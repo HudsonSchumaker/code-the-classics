@@ -9,6 +9,7 @@
 #include "Color.hpp"
 #include "Common.hpp"
 #include <iostream>
+#include <stdlib.h>
 
 Menu::Menu(SDL_Renderer* renderer) {
     this->renderer = renderer;
@@ -70,24 +71,23 @@ void Menu::render() {
     };
     SDL_RenderCopy(renderer, title, NULL, &rect);
 
-    SDL_QueryTexture(startWhiteTexture, NULL, NULL, &size.x, &size.y);
-    SDL_Rect whiteRect = { 
+    SDL_QueryTexture(startGrayTexture, NULL, NULL, &size.x, &size.y);
+    SDL_Rect grayRect = { 
         Common::H_WIDTH - (size.x / 2), 
         Common::H_HEIGHT + 100 - (size.y / 2),
         size.x,
         size.y 
     };
-    SDL_RenderCopy(renderer, startWhiteTexture, NULL, &whiteRect);
+    SDL_RenderCopy(renderer, startGrayTexture, NULL, &grayRect);
 
-    SDL_QueryTexture(startGrayTexture, NULL, NULL, &size.x, &size.y);
-    SDL_Rect grayRect = { 
+    SDL_QueryTexture(startWhiteTexture, NULL, NULL, &size.x, &size.y);
+    SDL_Rect whiteRect = { 
         Common::H_WIDTH - (size.x / 2), 
-        Common::H_HEIGHT + 100 - (size.y / 2) + 3,
+        Common::H_HEIGHT + 100 - (size.y / 2) + 2,
         size.x,
         size.y 
     };
-    SDL_RenderCopy(renderer, startGrayTexture, NULL, &grayRect);
-
+    SDL_RenderCopy(renderer, startWhiteTexture, NULL, &whiteRect);
     SDL_RenderPresent(renderer);   
 }
 
@@ -97,6 +97,7 @@ void Menu::input() {
         switch (sdlEvent.type) {
             case SDL_QUIT:
                 isRunning = false;
+                exit(0);
                 break;
         }
     }
@@ -106,4 +107,5 @@ void Menu::unload() {
     SDL_DestroyTexture(title);
     SDL_FreeSurface(surfaceTitle);
     TTF_CloseFont(font60);
+    TTF_CloseFont(font24);
 }
