@@ -26,15 +26,15 @@ Menu::~Menu() {
 
 void Menu::load() {
     font60 = TTF_OpenFont("data/font.ttf", 60);
-    font40 = TTF_OpenFont("data/font.ttf", 24);
+    font24 = TTF_OpenFont("data/font.ttf", 24);
     
     surfaceTitle = TTF_RenderText_Blended(font60, "Space Invaders", Color::getOrange());
 	title = SDL_CreateTextureFromSurface(renderer, surfaceTitle);
 
-    surfaceStartWhite = TTF_RenderText_Blended(font40, "- Press Enter to Start -", Color::getWhite());
+    surfaceStartWhite = TTF_RenderText_Blended(font24, "- Press Enter to Start -", Color::getWhite());
     startWhiteTexture = SDL_CreateTextureFromSurface(renderer, surfaceStartWhite);
 
-    surfaceStartGray = TTF_RenderText_Blended(font40, "- Press Enter to Start -", Color::getGray());
+    surfaceStartGray = TTF_RenderText_Blended(font24, "- Press Enter to Start -", Color::getGray());
     startGrayTexture = SDL_CreateTextureFromSurface(renderer, surfaceStartGray);
 }
 
