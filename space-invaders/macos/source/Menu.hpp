@@ -21,7 +21,7 @@ class Menu final {
         SDL_Texture* startGrayTexture;
 
         TTF_Font* font60;
-        TTF_Font* font40;
+        TTF_Font* font24;
         
         bool isRunning;
         Uint64 currentTick;
