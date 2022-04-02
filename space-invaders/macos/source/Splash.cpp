@@ -20,12 +20,12 @@ Splash::~Splash() {
 }
 
 void Splash::load() {
-    logoSurface = IMG_Load("data/logo.png");
+    SDL_Surface* logoSurface = IMG_Load("data/logo.png");
     logoTexture = SDL_CreateTextureFromSurface(renderer, logoSurface);
 }
 
 void Splash::loop() {
-    for(short i = 1; i < 5; i++) {
+    for(short i = 0; i < 4; i++) {
         input();
         render();
         SDL_Delay(1000);
@@ -57,5 +57,4 @@ void Splash::input() {
 
 void Splash::unload() {
     SDL_DestroyTexture(logoTexture);
-    SDL_FreeSurface(logoSurface);
 }

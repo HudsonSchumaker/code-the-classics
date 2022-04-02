@@ -32,8 +32,11 @@ void setUp() {
 int main(void) {
     setUp(); 
 
-    Splash splash(renderer);
-    Menu menu(renderer);
+    Splash* splash = new Splash(renderer);
+    delete splash;
+
+    Menu* menu = new Menu(renderer);
+    delete menu;
 
     return 0;
 }
