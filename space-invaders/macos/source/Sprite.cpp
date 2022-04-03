@@ -1,9 +1,10 @@
 // 
-// Switch
-// Sprite.cpp
-// SchumakerTeam Lab.
+// macOS
+// Space Invaders
+// SchumakerTeam
 // Hudson Schumaker
 //
+
 
 #include "Sprite.hpp"
 
