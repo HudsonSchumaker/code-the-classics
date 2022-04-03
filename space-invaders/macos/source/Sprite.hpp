@@ -1,9 +1,10 @@
 // 
-// Switch
-// Sprite.hpp
-// SchumakerTeam Lab.
+// macOS
+// Space Invaders
+// SchumakerTeam
 // Hudson Schumaker
 //
+
 
 #pragma once
 
