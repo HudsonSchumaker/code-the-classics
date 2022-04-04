@@ -11,6 +11,7 @@
 #include <SDL2/SDL_image.h>
 
 class Splash final {
+    
     private:
         SDL_Renderer* renderer;
         SDL_Texture* logoTexture; 
