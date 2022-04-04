@@ -9,6 +9,7 @@
 #include <SDL2/SDL.h>
 
 class Color final {
+    
     public:
         Color();
         ~Color();
