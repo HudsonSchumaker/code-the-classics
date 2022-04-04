@@ -1,3 +1,10 @@
+// 
+// macOS
+// Space Invaders
+// SchumakerTeam
+// Hudson Schumaker
+//
+
 #pragma once
 #include "Sprite.hpp"
 
