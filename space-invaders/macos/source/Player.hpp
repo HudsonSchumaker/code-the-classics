@@ -9,9 +9,10 @@
 #include "Sprite.hpp"
 
 class Player final: public Sprite {
-    
+
     private:
         bool destroyed;
+        int speed;
 
     public:
         Player() : Sprite(0, 0), destroyed(false) {};
@@ -24,6 +25,7 @@ class Player final: public Sprite {
         void move(int dx, int dy);
         void draw(SDL_Renderer* renderer) override;
         void setPos(int dx, int dy);
+        void setSpeed(int s);
 
         bool isDestroyed() const { return destroyed; };
         void setDestroyed(bool d) { this->destroyed = d; };
