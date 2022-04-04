@@ -9,7 +9,7 @@
 #pragma once
 
 #include <SDL2/SDL.h>
-//#include "Rectangle.hpp"
+#include "Collider2D.hpp"
 
 class Sprite {
 protected:
@@ -21,7 +21,7 @@ public:
 	Sprite();
 	Sprite(int x, int y);
     Sprite(int x, int y, int w, int h);
-//	Collider2D getBounds();
+	Collider2D getBounds();
 	virtual void draw(SDL_Renderer* renderer) = 0;
 	void setTexture(SDL_Texture* spr);
 				
