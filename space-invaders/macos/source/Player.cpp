@@ -25,6 +25,10 @@ void Player::setPos(int dx, int dy) {
     this->y = dy;
 }
 
+void Player::setSpeed(int s) {
+    this->speed = s;
+}
+
 void Player::draw(SDL_Renderer* renderer) {
     SDL_Rect rect = {x, y, w, h };
     SDL_RenderCopy(renderer, sprite, NULL, &rect);
