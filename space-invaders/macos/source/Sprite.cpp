@@ -5,7 +5,6 @@
 // Hudson Schumaker
 //
 
-
 #include "Sprite.hpp"
 
 Sprite::Sprite() {}
@@ -24,7 +23,7 @@ void Sprite::setTexture(SDL_Texture* spr) {
 	h = size.y;
 }
 
-const int Sprite::getX() { return x; };
+int Sprite::getX() const { return x; };
 void Sprite::setX(int x) { this->x = x; };
 
 int Sprite::getY() const { return y; };
