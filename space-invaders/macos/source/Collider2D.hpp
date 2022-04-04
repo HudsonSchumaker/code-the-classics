@@ -17,6 +17,7 @@ class Collider2D final {
         Collider2D(int w, int h);
         Collider2D(int x, int y, int w, int h);
 
+        static bool collide(const Collider2D& a, const Collider2D& b);
 
         void setX(int x);
 	    int getX() const;
