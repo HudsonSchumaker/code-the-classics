@@ -21,11 +21,11 @@ public:
 	Sprite();
 	Sprite(int x, int y);
     Sprite(int x, int y, int w, int h);
-//	Rectangle getBounds();
+//	Collider2D getBounds();
 	virtual void draw(SDL_Renderer* renderer) = 0;
 	void setTexture(SDL_Texture* spr);
 				
-	const int getX();
+	int getX() const;
 	void setX(int x);
 
     int getY() const;
