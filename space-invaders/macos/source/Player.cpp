@@ -25,6 +25,6 @@ void Player::setPos(int dx, int dy) {
     this->y = dy;
 }
 
-void Player::draw() {
+void Player::draw(SDL_Renderer* renderer) {
 
 }
