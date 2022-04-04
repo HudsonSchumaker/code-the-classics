@@ -8,16 +8,16 @@
 #include "Player.hpp"
 
 void Player::moveX(int dx) {
-    this->x += dx;
+    this->x += speed * dx;
 }
 
 void Player::moveY(int dy) {
-    this->y += dy;
+    this->y += speed * dy;
 }
 
 void Player::move(int dx, int dy) {
-    this->x += dx;
-    this->y += dy;
+    this->x += speed * dx;
+    this->y += speed * dy;
 }
 
 void Player::setPos(int dx, int dy) {
