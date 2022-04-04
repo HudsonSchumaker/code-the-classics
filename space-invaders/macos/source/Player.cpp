@@ -26,5 +26,6 @@ void Player::setPos(int dx, int dy) {
 }
 
 void Player::draw(SDL_Renderer* renderer) {
-
+    SDL_Rect rect = {x, y, w, h };
+    SDL_RenderCopy(renderer, sprite, NULL, &rect);
 }
