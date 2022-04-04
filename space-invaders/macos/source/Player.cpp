@@ -5,6 +5,8 @@
 // Hudson Schumaker
 //
 
+#include "Player.hpp"
+
 void Player::moveX(int dx) {
     this->x += dx;
 }
@@ -24,5 +26,5 @@ void Player::setPos(int dx, int dy) {
 }
 
 void Player::draw() {
-    GRRLIB_DrawImg(x, y, sprite, 0, 1, 1, Color::getWhite());
+
 }
