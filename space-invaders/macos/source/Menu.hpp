@@ -11,6 +11,7 @@
 #include <SDL2/SDL_ttf.h>
 
 class Menu final {
+    
     private:
         SDL_Renderer* renderer;
         SDL_Surface* surfaceTitle;
