@@ -10,6 +10,9 @@ jobs:
   build:
 
     runs-on: macos-latest
+    defaults:
+      run:
+        working-directory: ./space-invaders/macos
 
     steps:
     - uses: actions/checkout@v2
@@ -24,10 +27,10 @@ jobs:
     - name: SDL2 mixer
       run: brew install sdl2_mixer
     - name: make
-      run: space-invaders/macos/make
+      run: make
     - name: copy resources
       run: |
-        cp -vr space-invaders/macos/data space-invaders/macos/build
+        cp -vr ./data ./build
     - name: Upload macOS Binary
       uses: actions/upload-artifact@v2
       with:
