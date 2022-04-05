@@ -30,6 +30,6 @@ void Player::setSpeed(int s) {
 }
 
 void Player::draw(SDL_Renderer* renderer) {
-    SDL_Rect rect = {x, y, w, h };
+    SDL_Rect rect = { x, y, w, h };
     SDL_RenderCopy(renderer, sprite, NULL, &rect);
 }
