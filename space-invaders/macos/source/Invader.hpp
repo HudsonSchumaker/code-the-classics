@@ -1,4 +1,4 @@
-// 
+//
 // macOS
 // Space Invaders
 // SchumakerTeam
@@ -6,20 +6,25 @@
 //
 
 #pragma once
+
 #include "Sprite.hpp"
 
-class Player final : public Sprite {
+class Invaders final : public Sprite {
+    
+    public:
+        enum class Type {
+            SMALL = 100,
+            BIG = 150,
+            BOSS = 200
+        };
 
     private:
         bool destroyed;
         int speed;
+        Invaders::Type t;
 
     public:
-        Player() : Sprite(0, 0), destroyed(false) {};
-        Player(int x, int y) : Sprite(x, y), destroyed(false) {};
-        Player(int x, int y, int w, int h) : Sprite(x, y, w, h), destroyed(false) {};
-        Player(int x, int y, int w, int h, bool d) : Sprite(x, y, w, h), destroyed(d) {};
-    
+        Invaders(int x, int y, int w, int h, Invaders::Type t) : Sprite(x, y, w, h), destroyed(false), t(t) {};
         void moveX(int dx);
         void moveY(int dy);
         void move(int dx, int dy);
@@ -29,4 +34,5 @@ class Player final : public Sprite {
 
         bool isDestroyed() const;
         void setDestroyed(bool d);
+        int getScore() const;
 };
