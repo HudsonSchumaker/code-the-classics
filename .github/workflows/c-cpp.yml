@@ -25,7 +25,7 @@ jobs:
         brew install SDL2_ttf
         brew install SDL2_mixer
     - name: make
-      run: make bundle
+      run: make
     - name: copy resources
       run: |
         cp -vr ./data ./build
