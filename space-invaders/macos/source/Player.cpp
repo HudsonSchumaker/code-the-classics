@@ -33,3 +33,6 @@ void Player::draw(SDL_Renderer* renderer) {
     SDL_Rect rect = { x, y, w, h };
     SDL_RenderCopy(renderer, sprite, NULL, &rect);
 }
+
+bool Player::isDestroyed() const { return destroyed; };
+void Player::setDestroyed(bool d) { this->destroyed = d; };

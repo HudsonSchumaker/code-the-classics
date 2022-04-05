@@ -27,6 +27,6 @@ class Player final : public Sprite {
         void setPos(int px, int py);
         void setSpeed(int s);
 
-        bool isDestroyed() const { return destroyed; };
-        void setDestroyed(bool d) { this->destroyed = d; };
+        bool isDestroyed() const;
+        void setDestroyed(bool d);
 };
