@@ -34,5 +34,6 @@ void Invaders::draw(SDL_Renderer* renderer) {
     SDL_RenderCopy(renderer, sprite, NULL, &rect);
 }
 
-bool Invaders::isDestroyed() const { return destroyed; };
-void Invaders::setDestroyed(bool d) { this->destroyed = d; };
+bool Invaders::isDestroyed() const { return destroyed; }
+void Invaders::setDestroyed(bool d) { this->destroyed = d; }
+int Invaders::getScore() const { return (int) t; }
