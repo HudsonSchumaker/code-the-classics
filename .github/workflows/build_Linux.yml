@@ -20,7 +20,7 @@ jobs:
         run: sudo apt-get install -y mingw-w64 libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev libsdl2-mixer-dev
       - name: build
         run: |
-          g++ -c source/*.cpp -std=c++14 -O3 -Wall -m64 -I include && mkdir -p bin/release && g++ *.o -o bin/release/main -s -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer
+          g++ -c source/*.cpp -std=c++17 -O3 -Wall -m64 -I include && mkdir -p bin/release && g++ *.o -o bin/release/main -s -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer
       - name: copy resources
         run: |
           cp -vr ./data/ ./bin/release/
