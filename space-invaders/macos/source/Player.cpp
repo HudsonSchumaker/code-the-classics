@@ -35,4 +35,4 @@ void Player::draw(SDL_Renderer* renderer) {
 }
 
 bool Player::isDestroyed() const { return destroyed; }
-void Player::setDestroyed(bool d) { this->destroyed = d; };
+void Player::setDestroyed(bool d) { this->destroyed = d; }
