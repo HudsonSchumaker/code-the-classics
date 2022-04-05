@@ -1,0 +1,31 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./space-invaders/macos
+    
+    steps:
+      - uses: actions/checkout@v2
+      - name: setup
+        run: sudo apt-get install -y mingw-w64 libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev libsdl2-mixer-dev
+      - name: build
+        run: |
+          g++ -c source/*.cpp -std=c++14 -O3 -Wall -m64 -I include && mkdir -p bin/release && g++ *.o -o bin/release/main -s -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer
+      - name: copy resources
+        run: |
+          cp -vr ./data/ ./bin/release/
+      - name: Upload linux Binary
+        uses: actions/upload-artifact@v2
+        with:
+          name: linux
+          path: ./bin/release
