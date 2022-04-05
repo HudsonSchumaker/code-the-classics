@@ -29,7 +29,10 @@ jobs:
     - name: compile
       run: |
         g++ -Wall -std=c++17 source/*.cpp -o gameengine -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer
-	mv -f gameengine ./build
+
+    - name: move
+      run: |
+        mv -f gameengine ./build
 
     - name: copy resources
       run: |
