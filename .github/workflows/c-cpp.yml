@@ -24,6 +24,7 @@ jobs:
         brew install SDL2_image
         brew install SDL2_ttf
         brew install SDL2_mixer
+    
     - name: make
       run: make
     - name: copy resources
@@ -33,4 +34,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
           name: apple-silicon
-          path: ./build
+          path: ./build/gameengine
