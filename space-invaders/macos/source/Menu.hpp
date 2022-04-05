@@ -8,14 +8,17 @@
 #pragma once
 
 #include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
 #include <SDL2/SDL_ttf.h>
 
 class Menu final {
-    
+
     private:
         SDL_Renderer* renderer;
         SDL_Surface* surfaceTitle;
         SDL_Texture* title;
+        SDL_Texture* background;
+
         SDL_Surface* surfaceStartWhite;
         SDL_Texture* startWhiteTexture;
         SDL_Surface* surfaceStartGray;
@@ -24,13 +27,12 @@ class Menu final {
         TTF_Font* font60;
         TTF_Font* font24;
         
-        bool isRunning;
-        Uint64 currentTick;
-        Uint64 lastTick;
-        double deltaTime;
+        bool isRunning = false;
+        int millisecsPreviousFrame = 0;
+        double deltaTime = 0.0;
         
         void load();  
-        void loop();
+        void update();
         void render();
         void input();
         void unload();  
