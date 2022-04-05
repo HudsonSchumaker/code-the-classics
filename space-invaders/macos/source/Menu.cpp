@@ -25,7 +25,7 @@ void Menu::load() {
     font24 = TTF_OpenFont("data/font.ttf", 24);
     
     SDL_Surface* surfaceTitle = TTF_RenderText_Blended(font60, "Space Invaders", Color::getOrange());
-	title = SDL_CreateTextureFromSurface(renderer, surfaceTitle);
+    title = SDL_CreateTextureFromSurface(renderer, surfaceTitle);
 
     SDL_Surface* surfaceStartWhite = TTF_RenderText_Blended(font24, "- Press Enter to Start -", Color::getWhite());
     startWhiteTexture = SDL_CreateTextureFromSurface(renderer, surfaceStartWhite);
