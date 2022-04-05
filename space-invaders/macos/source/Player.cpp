@@ -20,9 +20,9 @@ void Player::move(int dx, int dy) {
     this->y += speed * dy;
 }
 
-void Player::setPos(int dx, int dy) {
-    this->x = dx;
-    this->y = dy;
+void Player::setPos(int px, int py) {
+    this->x = px;
+    this->y = py;
 }
 
 void Player::setSpeed(int s) {

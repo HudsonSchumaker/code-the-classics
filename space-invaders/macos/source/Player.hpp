@@ -24,7 +24,7 @@ class Player final : public Sprite {
         void moveY(int dy);
         void move(int dx, int dy);
         void draw(SDL_Renderer* renderer) override;
-        void setPos(int dx, int dy);
+        void setPos(int px, int py);
         void setSpeed(int s);
 
         bool isDestroyed() const { return destroyed; };
