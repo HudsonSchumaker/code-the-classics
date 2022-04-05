@@ -25,14 +25,14 @@ jobs:
         brew install SDL2_image
         brew install SDL2_ttf
         brew install SDL2_mixer
+        
+    - name: copy resources
+      run: |
+        cp -vr ./data ./build
     
     - name: compile
       run: |
         g++ -Wall -std=c++17 source/*.cpp -o build/gameengine -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer
-
-    - name: copy resources
-      run: |
-        cp -vr ./data ./build
     
     - name: upload macOS binary
       uses: actions/upload-artifact@v2
