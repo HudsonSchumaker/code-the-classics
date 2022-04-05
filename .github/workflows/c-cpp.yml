@@ -28,11 +28,7 @@ jobs:
     
     - name: compile
       run: |
-        g++ -Wall -std=c++17 source/*.cpp -o gameengine -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer
-
-    - name: move
-      run: |
-        mv -f gameengine ./build
+        g++ -Wall -std=c++17 source/*.cpp -o build/gameengine -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer
 
     - name: copy resources
       run: |
@@ -41,5 +37,5 @@ jobs:
     - name: upload macOS binary
       uses: actions/upload-artifact@v2
       with:
-          name: apple-silicon
-          path: ./build/gameengine
+          name: game
+          path: ./build
