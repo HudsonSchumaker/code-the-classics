@@ -24,10 +24,5 @@ jobs:
     - name: SDL2 mixer
       run: brew install sdl2_mixer
     - name: make
-      run: make
-    - name: make check
-      run: make check
-    - name: make check
-      run: make check
-    - name: make distcheck
-      run: make distcheck
+      run: code-the-classics/space-invaders/macos/make
+
