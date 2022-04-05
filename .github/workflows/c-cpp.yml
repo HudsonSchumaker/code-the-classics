@@ -24,5 +24,12 @@ jobs:
     - name: SDL2 mixer
       run: brew install sdl2_mixer
     - name: make
-      run: code-the-classics/space-invaders/macos/make
-
+      run: space-invaders/macos/make
+    - name: copy resources
+      run: |
+        cp -vr space-invaders/macos/data space-invaders/macos/build
+    - name: Upload macOS Binary
+      uses: actions/upload-artifact@v2
+      with:
+          name: apple-silicon
+          path: ./bin/release
