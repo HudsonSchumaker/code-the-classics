@@ -1,5 +1,5 @@
 compile:
-	g++ -Wall -std=c++17 source/*.cpp -o gameengine -I/opt/homebrew/include -L/opt/homebrew/lib -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer
+	g++ -Wall -std=c++17 source/*.cpp -o gameengine -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer
 	mv -f gameengine build/
 
 run:
