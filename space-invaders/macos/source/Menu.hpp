@@ -15,13 +15,9 @@ class Menu final {
 
     private:
         SDL_Renderer* renderer;
-        SDL_Surface* surfaceTitle;
         SDL_Texture* title;
         SDL_Texture* background;
-
-        SDL_Surface* surfaceStartWhite;
         SDL_Texture* startWhiteTexture;
-        SDL_Surface* surfaceStartGray;
         SDL_Texture* startGrayTexture;
 
         TTF_Font* font60;
