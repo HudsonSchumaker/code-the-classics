@@ -8,7 +8,7 @@
 #pragma once
 #include "Sprite.hpp"
 
-class Player final: public Sprite {
+class Player final : public Sprite {
 
     private:
         bool destroyed;
