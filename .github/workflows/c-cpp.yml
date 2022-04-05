@@ -18,16 +18,14 @@ jobs:
     - uses: actions/checkout@v2
     - name: brew update
       run: brew update
-    - name: SDL2
-      run: brew install sdl2
-    - name: SDL2 image
-      run: brew install sdl2_image
-    - name: SDL2 ttf
-      run: brew install sdl2_ttf
-    - name: SDL2 mixer
-      run: brew install sdl2_mixer
+    - name: install dependencies
+      run: | 
+        brew install SDL2
+        brew install SDL2_image
+        brew install SDL2_ttf
+        brew install SDL2_mixer
     - name: make
-      run: make
+      run: make bundle
     - name: copy resources
       run: |
         cp -vr ./data ./build
@@ -35,4 +33,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
           name: apple-silicon
-          path: ./bin/release
+          path: ./build
