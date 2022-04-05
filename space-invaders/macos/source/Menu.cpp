@@ -24,13 +24,13 @@ void Menu::load() {
     font60 = TTF_OpenFont("data/font.ttf", 60);
     font24 = TTF_OpenFont("data/font.ttf", 24);
     
-    surfaceTitle = TTF_RenderText_Blended(font60, "Space Invaders", Color::getOrange());
+    SDL_Surface* surfaceTitle = TTF_RenderText_Blended(font60, "Space Invaders", Color::getOrange());
 	title = SDL_CreateTextureFromSurface(renderer, surfaceTitle);
 
-    surfaceStartWhite = TTF_RenderText_Blended(font24, "- Press Enter to Start -", Color::getWhite());
+    SDL_Surface* surfaceStartWhite = TTF_RenderText_Blended(font24, "- Press Enter to Start -", Color::getWhite());
     startWhiteTexture = SDL_CreateTextureFromSurface(renderer, surfaceStartWhite);
 
-    surfaceStartGray = TTF_RenderText_Blended(font24, "- Press Enter to Start -", Color::getGray());
+    SDL_Surface* surfaceStartGray = TTF_RenderText_Blended(font24, "- Press Enter to Start -", Color::getGray());
     startGrayTexture = SDL_CreateTextureFromSurface(renderer, surfaceStartGray);
 
     SDL_Surface* bkgSurface = IMG_Load("data/background.jpg");
@@ -111,7 +111,6 @@ void Menu::input() {
 
 void Menu::unload() {
     SDL_DestroyTexture(title);
-    SDL_FreeSurface(surfaceTitle);
     TTF_CloseFont(font60);
     TTF_CloseFont(font24);
 }
