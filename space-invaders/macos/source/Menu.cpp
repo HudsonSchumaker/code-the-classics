@@ -13,13 +13,8 @@
 
 Menu::Menu(SDL_Renderer* renderer) {
     this->renderer = renderer;
-    isRunning = false;
-    currentTick = SDL_GetPerformanceCounter();
-    lastTick = 0;
-    deltaTime = 0.0;
-
     load();
-    loop();
+    update();
 }
 
 Menu::~Menu() {
@@ -37,15 +32,21 @@ void Menu::load() {
 
     surfaceStartGray = TTF_RenderText_Blended(font24, "- Press Enter to Start -", Color::getGray());
     startGrayTexture = SDL_CreateTextureFromSurface(renderer, surfaceStartGray);
+
+    SDL_Surface* bkgSurface = IMG_Load("data/background.jpg");
+    background = SDL_CreateTextureFromSurface(renderer, bkgSurface);
 }
 
-void Menu::loop() {
+void Menu::update() {
     isRunning = true;
     while(isRunning) {
-        lastTick = currentTick;
-		currentTick = SDL_GetPerformanceCounter();
-		deltaTime = (double) ((currentTick - lastTick) * 1000 / (double) SDL_GetPerformanceFrequency());
-        
+        int timeToWait = Common::MILLISECS_PER_FRAME - (SDL_GetTicks() - millisecsPreviousFrame);
+        if (timeToWait > 0 && timeToWait <= Common::MILLISECS_PER_FRAME) {
+            SDL_Delay(timeToWait);
+        }
+        deltaTime = (SDL_GetTicks() - millisecsPreviousFrame) / 1000.0;
+        millisecsPreviousFrame = SDL_GetTicks();
+
         input();
         render();
         SDL_Delay(deltaTime);
@@ -55,6 +56,11 @@ void Menu::loop() {
 void Menu::render() {
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
     SDL_RenderClear(renderer);
+
+    SDL_Rect rectBkg = {
+        0, 0, 640, 480 
+    };
+    SDL_RenderCopy(renderer, background, NULL, &rectBkg);
 
     SDL_Point size;
     SDL_QueryTexture(title, NULL, NULL, &size.x, &size.y);
