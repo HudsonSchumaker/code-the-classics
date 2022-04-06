@@ -34,8 +34,11 @@ jobs:
       run: |
         g++ -Wall -std=c++17 source/*.cpp -o build/gameengine -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer
     
+    - name: compress
+      run: tar -cvf build_artifacts.tar ./build
+      
     - name: upload macOS binary
       uses: actions/upload-artifact@v2
       with:
           name: game
-          path: build
+          path: build_artifacts.tar
