@@ -37,8 +37,12 @@ jobs:
     - name: compress
       run: tar -cvf build_artifacts.tar ./build
       
+    - name: see files
+      run: ls -al
+    
+  
     - name: upload macOS binary
       uses: actions/upload-artifact@v2
       with:
         name: game
-        path: build_artifacts.tar
+        path: .build_artifacts.tar
