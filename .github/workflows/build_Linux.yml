@@ -29,9 +29,10 @@ jobs:
         run: |
           tar -cvf ./bin/build.tar ./bin/release
           pwd
+          ls -al
       
       - name: Upload linux Binary
         uses: actions/upload-artifact@v2
         with:
           name: artifacts
-          path: bin
+          path: ./bin
