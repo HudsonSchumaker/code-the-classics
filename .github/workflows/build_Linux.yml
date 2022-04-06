@@ -24,8 +24,15 @@ jobs:
       - name: copy resources
         run: |
           cp -vr ./data/ ./bin/release/
+      
+      - name: compress
+        run: tar -cvf artifacts.tar ./bin/release
+      
+      - name: see files
+        run: ls -al
+      
       - name: Upload linux Binary
         uses: actions/upload-artifact@v2
         with:
-          name: linux
+          name: artifacts.tar
           path: ./bin/release
