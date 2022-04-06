@@ -1,4 +1,4 @@
-name: C/C++ CI
+name: C/C++ CI build linux x64
 
 on:
   push:
@@ -28,11 +28,9 @@ jobs:
       - name: compress
         run: |
           tar -cvf ./bin/build.tar ./bin/release
-          pwd
-          ls -al
       
       - name: Upload linux Binary
         uses: actions/upload-artifact@v2
         with:
           name: artifacts
-          path: /home/runner/work/code-the-classics/code-the-classics/space-invaders/linux/bin
+          path: /home/runner/work/code-the-classics/code-the-classics/space-invaders/linux/bin/release
