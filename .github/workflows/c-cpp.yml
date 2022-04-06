@@ -43,5 +43,5 @@ jobs:
     - name: upload macOS binary
       uses: actions/upload-artifact@v3
       with:
-        name: game
+        name: artifacts.tar
         path: artifacts.tar
