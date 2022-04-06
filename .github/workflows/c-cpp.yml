@@ -38,6 +38,8 @@ jobs:
       run: |
         mkdir release
         tar -cvf ./release/artifacts.tar ./build
+        ls -al
+        pwd
       
     - name: upload macOS binary
       uses: actions/upload-artifact@v3
