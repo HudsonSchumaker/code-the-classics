@@ -26,7 +26,7 @@ jobs:
           cp -vr ./data/ ./bin/release/
       
       - name: compress
-        run: tar -cvf artifacts.tar ./bin/release
+        run: tar -cvf ./bin/artifacts.tar ./bin/release
       
       - name: see files
         run: ls -al
@@ -35,4 +35,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: artifacts.tar
-          path: ./bin/release/
+          path: ./bin/
