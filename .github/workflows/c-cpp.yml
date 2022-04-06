@@ -41,7 +41,7 @@ jobs:
       run: ls -al
     
     - name: upload macOS binary
-      uses: actions/upload-artifact@v@v3.0.0
+      uses: actions/upload-artifact@v3
       with:
         name: game
         path: artifacts.tar
