@@ -26,21 +26,10 @@ jobs:
           cp -vr ./data/ ./bin/release/
       
       - name: compress
-        run: tar -cvf ./bin/artifacts.tar ./bin/release
-      
-      - name: see files
-        run: |
-          echo "work dir" 
-          ls -al
-          echo "bin"
-          cd ./bin
-          ls -al
-          echo "release"
-          cd ./release
-          ls -al
+        run: tar -cvf ./bin/build.tar ./bin/release
       
       - name: Upload linux Binary
         uses: actions/upload-artifact@v2
         with:
-          name: artifacts.tar
-          path: ./bin/
+          name: artifacts
+          path: bin
