@@ -29,7 +29,12 @@ jobs:
         run: tar -cvf ./bin/artifacts.tar ./bin/release
       
       - name: see files
-        run: ls -al
+        run: |
+          ls -al
+          cd ./bin
+          ls -al
+          cd ./release
+          ls -al
       
       - name: Upload linux Binary
         uses: actions/upload-artifact@v2
