@@ -41,7 +41,11 @@ jobs:
       run: ls -al
     
     - name: upload macOS binary
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v3.0.0
       with:
-        name: artifacts.tar
         path: artifacts.tar
+
+    - name: Download a Build Artifact
+      uses: actions/download-artifact@v3.0.0
+
+    
