@@ -35,14 +35,13 @@ jobs:
         g++ -Wall -std=c++17 source/*.cpp -o ./build/game -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer
     
     - name: compress
-      run: tar -cvf build_artifacts.tar ./build
+      run: tar -cvf artifacts.tar ./build
       
     - name: see files
       run: ls -al
     
-  
     - name: upload macOS binary
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v@v3.0.0
       with:
         name: game
-        path: .build_artifacts.tar
+        path: artifacts.tar
