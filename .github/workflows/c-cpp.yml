@@ -32,7 +32,7 @@ jobs:
     
     - name: compile
       run: |
-        g++ -Wall -std=c++17 source/*.cpp -o ./build/gameengine -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer
+        g++ -Wall -std=c++17 source/*.cpp -o ./build/game -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer
     
     - name: compress
       run: tar -cvf build_artifacts.tar ./build
@@ -40,5 +40,5 @@ jobs:
     - name: upload macOS binary
       uses: actions/upload-artifact@v2
       with:
-          name: game
-          path: ./build/build_artifacts.tar
+        name: game
+        path: build_artifacts.tar
