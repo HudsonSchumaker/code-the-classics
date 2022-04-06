@@ -30,9 +30,12 @@ jobs:
       
       - name: see files
         run: |
+          echo "work dir" 
           ls -al
+          echo "bin"
           cd ./bin
           ls -al
+          echo "release"
           cd ./release
           ls -al
       
@@ -40,4 +43,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: artifacts.tar
-          path: ./bin/
+          path: ./bin/artifacts.tar
