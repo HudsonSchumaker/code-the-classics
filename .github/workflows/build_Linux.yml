@@ -35,4 +35,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: artifacts
-          path: ./bin
+          path: /home/runner/work/code-the-classics/code-the-classics/space-invaders/linux/bin
