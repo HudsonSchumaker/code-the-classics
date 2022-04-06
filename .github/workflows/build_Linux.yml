@@ -26,7 +26,9 @@ jobs:
           cp -vr ./data/ ./bin/release/
       
       - name: compress
-        run: tar -cvf ./bin/build.tar ./bin/release
+        run: |
+          tar -cvf ./bin/build.tar ./bin/release
+          pwd
       
       - name: Upload linux Binary
         uses: actions/upload-artifact@v2
