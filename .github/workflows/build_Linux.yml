@@ -1,4 +1,4 @@
-name: C/C++ CI build linux x64
+name: build linux x64
 
 on:
   push:
