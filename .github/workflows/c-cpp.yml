@@ -45,5 +45,5 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: artifacts
-        path: /Users/runner/work/code-the-classics/code-the-classics/space-invaders/macos
+        path: /Users/runner/work/code-the-classics/code-the-classics/space-invaders/macos/release
     
