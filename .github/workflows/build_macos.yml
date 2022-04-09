@@ -15,7 +15,7 @@ jobs:
         working-directory: ./space-invaders/macos
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: brew update
       run: brew update
     
@@ -32,7 +32,7 @@ jobs:
     
     - name: compile
       run: |
-        g++ -Wall -std=c++17 source/*.cpp -o ./build/game -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer
+        g++ -Wall -std=c++17 -O3 source/*.cpp -o ./build/game -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer
     
     - name: compress
       run: |
