@@ -15,12 +15,20 @@ template <typename T> struct Vector2d {
     Vector2d(T x, T y) : x(x), y(y) {}
     
     static Vector2d foward(){
-        T x = 1;
-        T y = 0;
-        return Vector2d(x, y);
+        return Vector2d(1, 0);
     }
 
-    
+    static Vector2d backward() {
+        return Vector2d(-1, 0);
+    }
+
+    static Vector2d up() {
+        return Vector2d(0, -1);
+    }
+
+    static Vector2d down() {
+        return new Vector2d(0, 1);
+    }
 };
 
 using Vector2di = Vector2d<int>;
