@@ -15,7 +15,7 @@ jobs:
         working-directory: ./space-invaders/linux
     
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: setup
         run: sudo apt-get install -y mingw-w64 libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev libsdl2-mixer-dev
       - name: build
@@ -30,7 +30,7 @@ jobs:
           tar -cvf ./bin/build.tar ./bin/release
       
       - name: Upload linux Binary
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: artifacts
           path: /home/runner/work/code-the-classics/code-the-classics/space-invaders/linux/bin/release
