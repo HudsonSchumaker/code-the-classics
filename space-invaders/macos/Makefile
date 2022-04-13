@@ -3,11 +3,11 @@ compile:
 	mv -f game build/
 
 run:
-	./build/gameengine
+	./build/game
 
 bundle:
 	g++ -Wall -std=c++17 source/*.cpp -o game -I/opt/homebrew/include -L/opt/homebrew/lib -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer
-	mv -f gameengine build/
+	mv -f game build/
 	
 	rm -r build/game.app
 
@@ -26,4 +26,4 @@ bundle:
 	#open -a build/game.app
 
 clean:
-	rm build/gameengine
+	rm build/game
