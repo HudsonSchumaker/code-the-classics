@@ -5,18 +5,19 @@
             "label": "clang++ build active file",
             "command": "/usr/bin/clang++",
             "args": [
+                "-std=c++17",
                 "-I/opt/homebrew/include",
                 "-L/opt/homebrew/lib",
                 "-lSDL2",
                 "-lSDL2_image",
-                "-lSDL2_ttf", 
+                "-lSDL2_ttf",
                 "-lSDL2_mixer",
                 "-lSDL2_gfx",
                 "-fdiagnostics-color=always",
                 "-g",
-                "${workspaceFolder}/*.cpp",
+                "${workspaceFolder}/space-invaders/macos/source/*.cpp",
                 "-o",
-                "${workspaceFolder}/build/game"
+                "${workspaceFolder}/space-invaders/macos/build/game"
             ],
             "options": {
                 "cwd": "${workspaceFolder}/space-invaders/macos"
