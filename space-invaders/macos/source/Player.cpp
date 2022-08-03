@@ -2,7 +2,7 @@
 // macOS
 // Space Invaders
 // SchumakerTeam
-// Hudson Schumaker
+// Hudson Schumaker 
 //
 
 #include "Player.hpp"
